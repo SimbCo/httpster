@@ -61,7 +61,7 @@ body #content h2 {
   font-size: 21px;
   font-weight: normal;
   text-align: center;
-  padding: 22px 0;
+  padding: 22px 0 0;
 }
 body #content pre {
   font-size: 14px;
