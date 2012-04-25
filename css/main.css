@@ -1,0 +1,91 @@
+@import url("../fonts/stylesheet.css");
+html {
+  background: url("../img/bg_portland_bridge.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+html,
+body {
+  height: 100%;
+}
+a {
+  color: #0071bc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+body {
+  font-family: 'PigeonRegular';
+}
+body header {
+  display: block;
+  width: 360px;
+  height: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+body header h1 {
+  position: absolute;
+  bottom: 70px;
+  width: 204px;
+  left: 50%;
+  margin-left: -102px;
+  font-size: 72px;
+  font-weight: normal;
+  color: rgba(255,255,255,0.50);
+}
+body header h1:after {
+  content: '';
+  background: url("../img/moustache.svg") no-repeat;
+  width: 80px;
+  height: 22px;
+  position: absolute;
+  left: 10px;
+  top: 75px;
+}
+body header h1 strong {
+  color: #fff;
+  font-weight: normal;
+}
+body #content {
+  width: 360px;
+  background: rgba(255,255,255,0.90);
+  position: relative;
+  min-height: 50%;
+  margin: 0 auto;
+}
+body #content h2 {
+  font-size: 21px;
+  font-weight: normal;
+  text-align: center;
+  padding: 22px 0;
+}
+body #content pre {
+  font-size: 14px;
+  background: #000;
+  color: #fff;
+  width: 244px;
+  position: relative;
+  margin: 0 auto;
+  padding: 14px 18px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 1px 0 #fff;
+  -webkit-box-shadow: 0 1px 0 #fff;
+  box-shadow: 0 1px 0 #fff;
+  line-height: 16px;
+}
+body #content section {
+  margin: 20px 0;
+}
+body #content section .comment {
+  width: 280px;
+  margin: 5px auto;
+}
+body #content section:last-child {
+  padding-bottom: 20px;
+}
