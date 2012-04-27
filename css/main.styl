@@ -40,11 +40,13 @@ body
 			strong
 				color hsla(0, 0%, 100%, 1)
 				font-weight normal
+	.wrap
+		height 50%
 	#content
 		width 360px
 		background hsla(0, 0%, 100%, 0.9)
 		position relative
-		min-height 50%
+		height 100%
 		margin 0 auto
 		h2
 			font-size 21px
@@ -73,3 +75,29 @@ body
 				margin 5px auto
 			&:last-child
 				padding-bottom 20px
+
+@media all and (max-height: 960px)
+	*
+		-moz-box-sizing border-box
+		-webkit-box-sizing border-box
+		box-sizing border-box
+	body
+		header
+			position absolute
+			height 180px !important
+			width 100%
+		.wrap
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+			margin 0 auto
+			padding 180px 0 0
+			#content
+				height 100%
+				pre
+					width 280px
+@media all and (max-width: 400px)
+	#content
+		width 100% !important
