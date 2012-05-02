@@ -93,6 +93,14 @@ body #content section:last-child {
   padding-bottom: 20px;
 }
 @media all and (max-height: 960px) {
+  body header {
+    height: 40%;
+  }
+  body .wrap {
+    height: 60%;
+  }
+}
+@media all and (max-height: 800px) {
   * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;

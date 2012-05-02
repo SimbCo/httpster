@@ -6,7 +6,7 @@ html
 		meta(name= 'viewport', content = 'initial-scale = 1.0,maximum-scale = 1.0')
 		title httpster
 		link(rel = 'stylesheet', type = 'text/css', href = 'css/reset.css')
-		link(rel = 'stylesheet', type = 'text/css', href = 'css/main.css')
+		link(rel = 'stylesheet', type = 'text/css', href = 'css/test.css')
 		link(rel = 'shortcut icon', type = 'image/x-icon', href = 'favicon.ico')
 		//if lt IE 9
 			script(src = '//html5shiv.googlecode.com/svn/trunk/html5.js')
@@ -14,23 +14,21 @@ html
 		header 
 			h1
 				| <strong>http</strong>ster
-		.wrap
-			#content
-				h2 Simple local static development server
-				section
-					.comment install httpster (with <a href="http://npmjs.org/">npm</a>)
-					pre $ npm install -g httpster
-				section
-					.comment navigate to your folder and start httpster<br>
-					pre $ cd your_public_folder/
-						|$ httpster
-						|Starting Server on port "3333"
-				section
-					.comment choose the port
-					pre $ httpster -p 8800
-				section
-					.comment pass a path to the root
-					pre $ httpster wwww/
-				section
-					.comment fork it on <a href="https://github.com/SimbCo/httpster">github</a>, or whatever
-		footer
+		#content
+			h2 Simple local static development server
+			section
+				.comment install httpster (with <a href="http://npmjs.org/">npm</a>)
+				pre $ npm install -g httpster
+			section
+				.comment navigate to your folder and start httpster<br>
+				pre $ cd your_public_folder/
+					|$ httpster
+					|Starting Server on port "3333"
+			section
+				.comment choose the port
+				pre $ httpster -p 8800
+			section
+				.comment pass a path to the root
+				pre $ httpster wwww/
+			section
+				.comment fork it on <a href="https://github.com/SimbCo/httpster">github</a>, or whatever
