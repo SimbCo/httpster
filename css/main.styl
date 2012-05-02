@@ -13,19 +13,34 @@ a
 a:hover
 	text-decoration underline
 body
+	width 100%
 	font-family 'PigeonRegular'
-	header
+	display -webkit-box
+	-webkit-box-orient vertical
+	display -moz-box
+	-moz-box-orient vertical
+	display box
+	box-orient vertical
+	-webkit-box-align center
+	-moz-box-align center
+	box-align center
+
+	&:before
+		content ''
+		-webkit-box-flex 1
+		-moz-box-flex 1
+		box-flex 1
 		display block
-		width 360px
-		height 50%
+		min-height 20px
+
+	& > header
+		-webkit-box-flex 1
+		-moz-box-flex 1
+		box-flex 1
 		position relative
-		margin 0 auto
+		max-height 144px
+		min-height 120px
 		h1
-			position absolute
-			bottom 70px
-			width 204px
-			left 50%
-			margin-left -102px
 			font-size 72px
 			font-weight normal
 			color hsla(0, 0%, 100%, 0.5)
@@ -41,11 +56,13 @@ body
 				color hsla(0, 0%, 100%, 1)
 				font-weight normal
 	#content
+		-webkit-box-flex 1
+		-moz-box-flex 1
+		box-flex 1
+		min-height 500px
+		max-height 600px
 		width 360px
 		background hsla(0, 0%, 100%, 0.9)
-		position relative
-		min-height 50%
-		margin 0 auto
 		h2
 			font-size 21px
 			font-weight normal
@@ -73,3 +90,23 @@ body
 				margin 5px auto
 			&:last-child
 				padding-bottom 20px
+
+@media all and (max-width: 400px)
+	body #content
+		display -webkit-box
+		-webkit-box-orient vertical
+		display -moz-box
+		-moz-box-orient vertical
+		display box
+		box-orient vertical
+		-webkit-box-align center
+		-moz-box-align center
+		box-align center
+		width 100%
+		section
+			display block
+			margin 20px 0 0
+			&:last-child
+				-webkit-box-flex 1
+				-moz-box-flex 1
+				box-flex 1
