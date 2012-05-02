@@ -1,3 +1,43 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>httpster</title><link rel="stylesheet" type="text/css" href="css/reset.css"><link rel="stylesheet" type="text/css" href="css/main.css"><link rel="shortcut icon" type="image/x-icon" href="favicon.ico"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><script src="js/app.js"></script><!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--></head><body><header> <h1><strong>http</strong>ster</h1></header><div id="content"><h2>Simple local static development server</h2><section><div class="comment">install httpster (with <a href="http://npmjs.org/">npm</a>)</div><pre>$ npm install -g httpster</pre></section><section><div class="comment">navigate to your folder and start httpster<br></div><pre>$ cd your_public_folder/
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+    <title>httpster</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"><!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="spacer"></div>
+    <header> 
+      <h1><strong>http</strong>ster</h1>
+    </header>
+    <div id="content">
+      <h2>Simple local static development server</h2>
+      <section>
+        <div class="comment">install httpster (with <a href="http://npmjs.org/">npm</a>)</div>
+        <pre>$ npm install -g httpster</pre>
+      </section>
+      <section>
+        <div class="comment">navigate to your folder and start httpster<br></div>
+        <pre>$ cd your_public_folder/
 $ httpster
-Starting Server on port &quot;3333&quot;</pre></section><section><div class="comment">choose the port</div><pre>$ httpster -p 8800</pre></section><section><div class="comment">pass a path to the root</div><pre>$ httpster wwww/</pre></section><section><div class="comment">fork it on <a href="https://github.com/SimbCo/httpster">github</a>, or whatever</div></section></div><footer></footer></body></html>
+Starting Server on port &quot;3333&quot;</pre>
+      </section>
+      <section>
+        <div class="comment">choose the port</div>
+        <pre>$ httpster -p 8800</pre>
+      </section>
+      <section>
+        <div class="comment">pass a path to the root</div>
+        <pre>$ httpster wwww/</pre>
+      </section>
+      <section>
+        <div class="comment">fork it on <a href="https://github.com/SimbCo/httpster">github</a>, or whatever</div>
+      </section>
+    </div>
+  </body>
+</html>

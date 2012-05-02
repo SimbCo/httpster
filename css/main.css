@@ -18,26 +18,40 @@ a:hover {
   text-decoration: underline;
 }
 body {
+  width: 100%;
   font-family: 'PigeonRegular';
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: box;
+  box-orient: vertical;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
 }
-body header {
+body:before {
+  content: '';
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
   display: block;
-  width: 360px;
-  height: 50%;
-  position: relative;
-  margin: 0 auto;
+  min-height: 20px;
 }
-body header h1 {
-  position: absolute;
-  bottom: 70px;
-  width: 204px;
-  left: 50%;
-  margin-left: -102px;
+body > header {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  position: relative;
+  max-height: 144px;
+  min-height: 120px;
+}
+body > header h1 {
   font-size: 72px;
   font-weight: normal;
   color: rgba(255,255,255,0.50);
 }
-body header h1:after {
+body > header h1:after {
   content: '';
   background: url("../img/moustache.svg") no-repeat;
   width: 80px;
@@ -46,16 +60,18 @@ body header h1:after {
   left: 10px;
   top: 75px;
 }
-body header h1 strong {
+body > header h1 strong {
   color: #fff;
   font-weight: normal;
 }
 body #content {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  min-height: 500px;
+  max-height: 600px;
   width: 360px;
   background: rgba(255,255,255,0.90);
-  position: relative;
-  min-height: 50%;
-  margin: 0 auto;
 }
 body #content h2 {
   font-size: 21px;
@@ -88,4 +104,27 @@ body #content section .comment {
 }
 body #content section:last-child {
   padding-bottom: 20px;
+}
+@media all and (max-width: 400px) {
+  body #content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: box;
+    box-orient: vertical;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    width: 100%;
+  }
+  body #content section {
+    display: block;
+    margin: 20px 0 0;
+  }
+  body #content section:last-child {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+  }
 }
