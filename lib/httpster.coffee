@@ -28,7 +28,7 @@ if (program.dir){
 
 startDefaultServer = function(port, path) {
   var server;
-  server = express.createServer();
+  server = express();
   server.configure(function() {
     server.use(express.static(path));
     server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));

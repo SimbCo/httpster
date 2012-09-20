@@ -2,10 +2,10 @@
   "author": "Simeon Bateman <simeon@simb.net> (http://www.simb.net)"
   , "name": "httpster"
   , "description": "Simple http server for local content"
-  , "version": "0.1.0"
+  , "version": "0.1.1"
   , "repository": "git://github.com/SimbCo/httpster.git"
   , "keywords": ["http", "web", "server"]
-  , "main": "./lib/httpster.js"
+  , "main": "./lib/httpster.coffee"
   , "bin": { "httpster": "./lib/httpster.coffee" }
   , "preferGlobal": "true"
   , "scripts" : { "prepublish" : "npm prune", "test": "make test" }
