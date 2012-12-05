@@ -12,6 +12,7 @@ exec = require('child_process').exec
 connect = require('connect')
 path = "./"
 port = undefined
+fav = require('./fav')
 
 program
   .version('0.1.0')
@@ -26,6 +27,7 @@ startDefaultServer = (port, path) ->
 
   app = connect()
 
+  app.use( fav(path) )
   app.use connect.static(path)
   app.use connect.logger(format:"dev")
   app.use connect.errorHandler(dumpExceptions: true, showStack: true)
