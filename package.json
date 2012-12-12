@@ -9,7 +9,7 @@
   , "bin": { "httpster": "./bin/httpster" }
   , "preferGlobal": "true"
   , "scripts" : { 
-      "postinstall": "./node_modules/coffee-script/bin/coffee -o lib/ src/",
+      "postinstall": "node ./node_modules/coffee-script/bin/coffee -o lib/ src/",
       "test": "make test" }
   , "dependencies": {
       "connect": "2.7.0",
