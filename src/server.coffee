@@ -15,7 +15,7 @@ port = undefined
 fav = require('./fav')
 
 program
-  .version('0.1.0')
+  .version('0.4.0')
   .option('-p, --port <port>', 'Port for server to run on - defaults to 3333')
   .option('-d, --dir [path]', 'Server directory - defaults to ./')
   .parse(process.argv)
