@@ -9,7 +9,7 @@
 fs = require('fs')
 program = require('commander')
 exec = require('child_process').exec
-connect = require('connect')
+express = require('express')
 path = "./"
 port = undefined
 fav = require('./fav')
@@ -25,12 +25,17 @@ path = program.dir ? fs.realpathSync(path)
 
 startDefaultServer = (port, path) ->
 
-  app = connect()
+  app = express()
 
   app.use( fav(path) )
-  app.use connect.static(path)
-  app.use connect.logger(format:"dev")
-  app.use connect.errorHandler(dumpExceptions: true, showStack: true)
+  app.use express.static(path)
+  app.use express.logger(format:"dev")
+  app.use express.errorHandler(dumpExceptions: true, showStack: true)
+
+  # production only
+  app.configure('production', ->
+    app.use express.staticCache()
+  )
 
   #app.use '/', (req, res) ->  res.render('index.html')
   app.listen(parseInt(port, 10))
