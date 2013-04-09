@@ -9,7 +9,7 @@
   , "bin": { "httpster": "./bin/httpster" }
   , "preferGlobal": "true"
   , "scripts" : { 
-      "postinstall": "coffee -o lib/ src/",
+      "prepublish": "coffee -o lib/ src/",
       "test": "make test" }
   , "dependencies": {
       "express": "3.0.x",
