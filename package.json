@@ -1,25 +1,32 @@
 {
-  "author": "Simeon Bateman <simeon@simb.net> (http://www.simb.net)"
-  , "name": "httpster"
-  , "description": "Simple http server for local content"
-  , "version": "0.5.1"
-  , "repository": "git://github.com/SimbCo/httpster.git"
-  , "keywords": ["http", "web", "server"]
-  , "main": "./lib/httpster"
-  , "bin": { "httpster": "./bin/httpster" }
-  , "preferGlobal": "true"
-  , "scripts" : { 
-      "prepublish": "coffee -o lib/ src/"}
-  , "dependencies": {
-      "express": "3.0.x"
-    , "commander": "1.1.1"
-  }
-  , "devDependencies": {
-      "should": "*"
-    , "mocha": "*"
-    , "coffee-script": "1.2.0"
-  }
-  , "engines": {
-    "node": "*"
+  "author": "Simeon Bateman <simeon@simb.net> (http://www.simb.net)",
+  "name": "httpster",
+  "description": "Simple http server for local content",
+  "version": "0.5.2",
+  "repository": "git://github.com/SimbCo/httpster.git",
+  "keywords": [
+    "http",
+    "web",
+    "server"
+  ],
+  "main": "./lib/httpster",
+  "bin": {
+    "httpster": "./bin/httpster"
+  },
+  "preferGlobal": "true",
+  "scripts": {
+    "prepublish": "coffee -o lib/ src/"
+  },
+  "dependencies": {
+    "express": "3.2.x",
+    "commander": "1.2.x"
+  },
+  "devDependencies": {
+    "coffee-script": "1.6.x",
+    "should": "~1.2.2",
+    "mocha": "~1.11.0"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
