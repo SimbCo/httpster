@@ -13,9 +13,10 @@ express = require('express')
 path = "./"
 port = undefined
 fav = require('./fav')
+pack = require('../package.json')
 
 program
-  .version('0.4.0')
+  .version(pack.version)
   .option('-p, --port <port>', 'Port for server to run on - defaults to 3333')
   .option('-d, --dir [path]', 'Server directory - defaults to ./')
   .parse(process.argv)
@@ -42,5 +43,5 @@ startDefaultServer = (port, path) ->
 
   app
 
-console.log("Starting Server on port %j from %s", port, path)
+console.log("Starting HTTPster v%s on port %j from %s", pack.version, port, path)
 startDefaultServer(port, path)
