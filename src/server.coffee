@@ -33,8 +33,9 @@ startDefaultServer = (port, path) ->
   if useCompress == true
     app.use express.compress()
 
-  app.use( fav(path) )
+  app.use fav(path)
   app.use express.static(path)
+  app.use express.directory(path)
   app.use express.logger(format:"dev")
   app.use express.errorHandler(dumpExceptions: true, showStack: true)
 
