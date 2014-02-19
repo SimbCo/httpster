@@ -15,6 +15,10 @@ That will start up a web server on port 3333 and let you serve up any static con
 
     httpster -p 8080 -d /home/somedir/public_html
 
+### HTML5 Pushstates
+
+If you want to run a local site that supports HTML5 Pushstates (aka being able to refresh the page), pass in the option `-s` or `--pushstate`. This will map all 4oh4's to the `index.html` you specified as root directory.
+
 If you have some issue please feel free to add a ticket here. If you have any suggestions for features that would make this more useful please feel free to let me know.
 
 Thanks to @GarthDB for asking for this and making me realize that I needed it too.
