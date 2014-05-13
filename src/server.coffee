@@ -10,6 +10,8 @@ fs = require('fs')
 program = require('commander')
 exec = require('child_process').exec
 express = require('express')
+cors = require('cors')
+
 path = "./"
 port = undefined
 fav = require('./fav')
@@ -34,6 +36,7 @@ startDefaultServer = (port, path) ->
     app.use express.compress()
 
   app.use fav(path)
+  app.use cors()
   app.use express.static(path)
   app.use express.directory(path)
   app.use express.logger(format:"dev")
