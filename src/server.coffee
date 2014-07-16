@@ -20,11 +20,13 @@ program
   .option('-p, --port <port>', 'Port for server to run on - defaults to 3333')
   .option('-d, --dir [path]', 'Server directory - defaults to ./')
   .option('-z, --compress', 'Add support for compression')
+  .option('-s, --pushstate', 'Add support for HTML5 pushstate')
   .parse(process.argv)
 
 port = program.port ? 3333
 path = program.dir ? fs.realpathSync(path)
 useCompress = program.compress ? false
+usePushstate = program.pushstate ? false
 
 startDefaultServer = (port, path) ->
 
@@ -38,6 +40,13 @@ startDefaultServer = (port, path) ->
   app.use express.directory(path)
   app.use express.logger(format:"dev")
   app.use express.errorHandler(dumpExceptions: true, showStack: true)
+
+  # pushstate support
+  if usePushstate == true
+    app.all "/*", (req, res) ->
+      res.sendfile "index.html",
+        root: path
+      return
 
   # production only
   app.configure('production', ->
