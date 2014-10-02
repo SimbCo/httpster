@@ -22,11 +22,13 @@ program
   .option('-p, --port <port>', 'Port for server to run on - defaults to 3333')
   .option('-d, --dir [path]', 'Server directory - defaults to ./')
   .option('-z, --compress', 'Add support for compression')
+  .option('-c, --cors', 'Add cors support')
   .parse(process.argv)
 
 port = program.port ? 3333
 path = program.dir ? fs.realpathSync(path)
 useCompress = program.compress ? false
+useCors = program.cors ? false
 
 startDefaultServer = (port, path) ->
 
@@ -36,7 +38,7 @@ startDefaultServer = (port, path) ->
     app.use express.compress()
 
   app.use fav(path)
-  app.use cors()
+  app.use cors() if useCors
   app.use express.static(path)
   app.use express.directory(path)
   app.use express.logger(format:"dev")
