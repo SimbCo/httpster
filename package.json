@@ -1,8 +1,8 @@
 {
   "author": "Simeon Bateman <simeon@simb.net> (http://www.simb.net)",
   "name": "httpster",
-  "description": "Simple http server for local content",
-  "version": "0.7.0",
+  "description": "Simple http server for static content",
+  "version": "0.8.0",
   "repository": "git://github.com/SimbCo/httpster.git",
   "keywords": [
     "http",
@@ -18,8 +18,9 @@
     "prepublish": "coffee -o lib/ src/"
   },
   "dependencies": {
+    "commander": "1.2.x",
     "express": "3.2.x",
-    "commander": "1.2.x"
+    "node-env-file": "0.1.4"
   },
   "devDependencies": {
     "coffee-script": "1.6.x",

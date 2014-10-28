@@ -14,6 +14,7 @@ path = "./"
 port = undefined
 fav = require('./fav')
 pack = require('../package.json')
+env = require('node-env-file');
 
 program
   .version(pack.version)
@@ -21,12 +22,17 @@ program
   .option('-d, --dir [path]', 'Server directory - defaults to ./')
   .option('-z, --compress', 'Add support for compression')
   .option('-s, --pushstate', 'Add support for HTML5 pushstate')
+  .option('-e, --env', 'Add support for setting environmental variables from .env file')
   .parse(process.argv)
+
 
 port = program.port ? 3333
 path = program.dir ? fs.realpathSync(path)
 useCompress = program.compress ? false
 usePushstate = program.pushstate ? false
+
+if program.env
+  env(path + "/.env")
 
 startDefaultServer = (port, path) ->
 
