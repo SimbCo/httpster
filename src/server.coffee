@@ -28,14 +28,14 @@ program
   .option('-c, --cors', 'Add cors support')
   .parse(process.argv)
 
+if program.env
+  env(fs.realpathSync(path) + "/.env")
+
 port = program.port ? 3333
 path = program.dir ? fs.realpathSync(path)
 useCompress = program.compress ? false
 useCors = program.cors ? false
 usePushstate = program.pushstate ? false
-
-if program.env
-  env(path + "/.env")
 
 if program.basic_auth
   if !process.env.HTTPSTER_AUTH_USER?
