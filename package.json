@@ -19,9 +19,10 @@
   },
   "dependencies": {
     "commander": "1.2.x",
+    "cors": "2.4.x",
     "express": "3.2.x",
     "node-env-file": "0.1.4",
-    "cors": "2.4.x"
+    "serve-index": "^1.6.0"
   },
   "devDependencies": {
     "coffee-script": "1.6.x",

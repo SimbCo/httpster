@@ -10,6 +10,7 @@ fs = require('fs')
 program = require('commander')
 exec = require('child_process').exec
 express = require('express')
+serveIndex = require('serve-index')
 cors = require('cors')
 path = "./"
 port = undefined
@@ -54,7 +55,7 @@ startDefaultServer = (port, path) ->
   app.use express.basicAuth(process.env.HTTPSTER_AUTH_USER, process.env.HTTPSTER_AUTH_PASS) if program.basic_auth
   app.use cors() if useCors
   app.use express.static(path)
-  app.use express.directory(path)
+  app.use serveIndex(path)
   app.use express.logger(format:"dev")
   app.use express.errorHandler(dumpExceptions: true, showStack: true)
 
