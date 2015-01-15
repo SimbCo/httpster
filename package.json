@@ -2,7 +2,7 @@
   "author": "Simeon Bateman <simeon@simb.net> (http://www.simb.net)",
   "name": "httpster",
   "description": "Simple http server for static content",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "git://github.com/SimbCo/httpster.git",
   "keywords": [
     "http",
