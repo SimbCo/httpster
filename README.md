@@ -11,7 +11,7 @@ Then from any directory where you want to have an http service running, just run
 
     httpster
 
-That will start up a web server on port 3333 and let you serve up any static content you wish. If you want to change the port or directory that the server runs from pass in the -p or -d options
+That will start up a web server on port `3333` and let you serve up any static content you wish. If you want to change the port or directory that the server runs from pass in the `-p` or `-d` options
 
     httpster -p 8080 -d /home/somedir/public_html
 
