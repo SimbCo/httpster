@@ -2,7 +2,7 @@
 
 ###
   HTTPster
-  Copyright(c) 2010 Simeon Bateman <simeon@simb.net>
+  Copyright(c) 2018 Simeon Bateman <simeon@simb.net>
   MIT Licensed
 ###
 
@@ -16,7 +16,9 @@ path = "./"
 port = undefined
 fav = require('./fav')
 pack = require('../package.json')
-env = require('node-env-file');
+env = require('node-env-file')
+basicAuth = require('basic-auth')
+morgan = require('morgan')
 
 program
   .version(pack.version)
@@ -52,12 +54,12 @@ startDefaultServer = (port, path) ->
     app.use express.compress()
 
   app.use fav(path)
-  app.use express.basicAuth(process.env.HTTPSTER_AUTH_USER, process.env.HTTPSTER_AUTH_PASS) if program.basic_auth
+  app.use basicAuth(process.env.HTTPSTER_AUTH_USER, process.env.HTTPSTER_AUTH_PASS) if program.basic_auth
   app.use cors() if useCors
   app.use express.static(path)
   app.use serveIndex(path)
-  app.use express.logger(format:"dev")
-  app.use express.errorHandler(dumpExceptions: true, showStack: true)
+  app.use morgan("dev")
+  # app.use express.errorHandler(dumpExceptions: true, showStack: true)
 
   # pushstate support
   if usePushstate == true
@@ -67,9 +69,9 @@ startDefaultServer = (port, path) ->
       return
 
   # production only
-  app.configure('production', ->
+  if ( app.get('env') == 'production')
     app.use express.staticCache()
-  )
+  
 
   app.listen(parseInt(port, 10))
 

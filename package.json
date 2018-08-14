@@ -3,7 +3,7 @@
   "name": "httpster",
   "license": "MIT",
   "description": "Simple http server for static content",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "repository": "git://github.com/SimbCo/httpster.git",
   "keywords": [
     "http",
@@ -19,16 +19,18 @@
     "prepublish": "coffee -o lib/ src/"
   },
   "dependencies": {
-    "commander": "1.2.x",
-    "cors": "2.4.x",
-    "express": "3.2.x",
-    "node-env-file": "0.1.4",
+    "basic-auth": "^2.0.0",
+    "commander": "2.17.x",
+    "cors": "2.8.x",
+    "express": "4.16.x",
+    "morgan": "^1.9.0",
+    "node-env-file": "0.1.x",
     "serve-index": "^1.6.0"
   },
   "devDependencies": {
-    "coffee-script": "1.6.x",
-    "should": "~1.2.2",
-    "mocha": "~1.11.0"
+    "coffee-script": "1.12.x",
+    "should": "~13.2.x",
+    "mocha": "~5.2.x"
   },
   "engines": {
     "node": ">=0.10.0"
