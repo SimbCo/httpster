@@ -3,7 +3,7 @@
   "name": "httpster",
   "license": "MIT",
   "description": "Simple http server for static content",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": "git://github.com/SimbCo/httpster.git",
   "keywords": [
     "http",
