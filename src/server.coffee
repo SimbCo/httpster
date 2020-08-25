@@ -12,6 +12,7 @@ exec = require('child_process').exec
 express = require('express')
 serveIndex = require('serve-index')
 cors = require('cors')
+fs = require('fs')
 path = "./"
 port = undefined
 fav = require('./fav')
@@ -29,6 +30,7 @@ program
   .option('-e, --env', 'Add support for setting environmental variables from .env file')
   .option('-b, --basic_auth', 'Add support for basic auth security. Uses environmental variables HTTPSTER_AUTH_USER and HTTPSTER_AUTH_PASS to authenticate')
   .option('-c, --cors', 'Add cors support')
+  .option('-l, --symlink', 'Enable symlink')
   .parse(process.argv)
 
 if program.env
@@ -39,12 +41,32 @@ path = program.dir ? fs.realpathSync(path)
 useCompress = program.compress ? false
 useCors = program.cors ? false
 usePushstate = program.pushstate ? false
+useSymlink = program.symlink ? false
+router = express.Router()
 
 if program.basic_auth
   if !process.env.HTTPSTER_AUTH_USER?
     throw('HTTPSTER Basic Authentication Enabled but no HTTPSTER_AUTH_USER environmental variable was found')
   if !process.env.HTTPSTER_AUTH_PASS?
     throw('HTTPSTER Basic Authentication Enabled but no HTTPSTER_AUTH_PASS environmental variable was found')
+
+router.use (req, res, next) ->
+    isSymlink = undefined
+    try
+      fs.lstat req.url.replace('/', './'), (err, stat) ->
+        try
+          isSymlink = stat.isSymbolicLink()
+        catch err
+        try
+          if isSymlink == true and useSymlink == false
+            throw new Error('Symlinks not allowed')
+        catch err
+          next err
+        return
+    catch err
+      next err
+    next()
+    return
 
 startDefaultServer = (port, path) ->
 
@@ -56,6 +78,7 @@ startDefaultServer = (port, path) ->
   app.use fav(path)
   app.use basicAuth(process.env.HTTPSTER_AUTH_USER, process.env.HTTPSTER_AUTH_PASS) if program.basic_auth
   app.use cors() if useCors
+  app.use router
   app.use express.static(path)
   app.use serveIndex(path)
   app.use morgan("dev")
