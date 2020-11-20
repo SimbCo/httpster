@@ -25,6 +25,7 @@ Since you can use httpster to deploy to PaaS providers like heroku you can now s
 
     httpster -b
 or
+    
     httpster --basic_auth
 
 If testing this locally you can also use a .env file in the directory you will run httpster from.
@@ -35,6 +36,14 @@ If testing this locally you can also use a .env file in the directory you will r
 Then use the `-e` or `--env` option to specify to load the environmental variables
 
     httpster --env --basic_auth
+### Symbolic Links
+
+For security purposes symbolic links have been disabled in the default usage.  If you need to serve content through symbolic links you can add the following flag when launching httpster.
+
+    httpster -l
+or
+
+    httpster --symlink
 
 ### Contributions
 
