@@ -12,6 +12,7 @@ exec = require('child_process').exec
 express = require('express')
 serveIndex = require('serve-index')
 cors = require('cors')
+compression = require('compression')
 fs = require('fs')
 path = "./"
 port = undefined
@@ -73,7 +74,7 @@ startDefaultServer = (port, path) ->
   app = express()
 
   if useCompress == true
-    app.use express.compress()
+    app.use compression()
 
   app.use fav(path)
   app.use basicAuth(process.env.HTTPSTER_AUTH_USER, process.env.HTTPSTER_AUTH_PASS) if program.basic_auth
