@@ -15,6 +15,18 @@ That will start up a web server on port `3333` and let you serve up any static c
 
     httpster -p 8080 -d /home/somedir/public_html
 
+### CLI Options
+| Option | Description |
+|--------|-------------|
+|`-p` or `--port`      | Port for server to run on - defaults to 3333 |
+|`-d` or `--dir`       | Serving directory - defaults to ./, i.e. current directory |
+|`-z` or `--compress`  | enable gzip response compression |
+|`-s` or `--pushstate` | Add support for HTML5 pushstate |
+|`-e` or `--env`       | setting environmental variables from .env file |
+|`-b` or `--basic_auth`| enable basic authentication. Uses environmental variables `HTTPSTER_AUTH_USER` and `HTTPSTER_AUTH_PASS` to authenticate |
+|`-c` or `--cors`      | enable CORS |
+|`-l` or `--symlink`   | Enable symlink |
+  
 ### HTML5 Pushstates
 
 If you want to run a local site that supports HTML5 Pushstates (aka being able to refresh the page), pass in the option `-s` or `--pushstate`. This will map all 4oh4's to the `index.html` you specified as root directory.
